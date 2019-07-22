@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://danish123:danish123@devconnector-dcrsi.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://danish123:danish123@devconnector-dcrsi.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "danishsuri"
 }
