@@ -80,7 +80,7 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         required: true
       },
-      feildofstudy: {
+      fieldofstudy: {
         type: String,
         required: true
       },
