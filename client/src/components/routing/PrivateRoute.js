@@ -6,16 +6,23 @@ import { Route, Redirect } from 'react-router-dom';
 const PrivateRoute = ({
   component: Component,
   auth: { isAuthenticated, loading },
+  //   auth: { isAuthenticated },
   ...rest
 }) => (
   <Route
     {...rest}
-    render={props =>
-      !isAuthenticated && !loading ? (
-        <Redirect to='/login' />
-      ) : (
-        <Component {...props} />
-      )
+    render={
+      props =>
+        localStorage.getItem('token') ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to='/login' />
+        )
+      //   !isAuthenticated && !loading ? (
+      //     <Redirect to='/login' />
+      //   ) : (
+      //     <Component {...props} />
+      //   )
     }
   />
 );

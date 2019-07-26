@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -9,6 +9,7 @@ const EditProfile = ({
   history,
   getcurrentprofile,
   profile: { profile, loading }
+  //   profile: { profile }
 }) => {
   const [formData, setFormData] = useState({
     company: '',
@@ -29,6 +30,22 @@ const EditProfile = ({
 
   useEffect(() => {
     getcurrentprofile();
+
+    //alert(profile.company);
+    // setFormData({
+    //   company: !profile.company === null ? '' : profile.company,
+    //   website: !profile.website ? '' : profile.website,
+    //   location: !profile.location ? '' : profile.location,
+    //   status: !profile.status ? '' : profile.status,
+    //   skills: !profile.skills ? '' : profile.skills,
+    //   githubusername: !profile.githubusername ? '' : profile.githubusername,
+    //   bio: !profile.bio ? '' : profile.bio,
+    //   twitter: !profile.twitter ? '' : profile.twitter,
+    //   facebook: !profile.facebook ? '' : profile.facebook,
+    //   youtube: !profile.youtube ? '' : profile.youtube,
+    //   linkedin: !profile.linkedin ? '' : profile.linkedin,
+    //   instagram: !profile.instagram ? '' : profile.instagram
+    // });
 
     setFormData({
       company: loading || !profile.company ? '' : profile.company,
@@ -238,9 +255,9 @@ const EditProfile = ({
         )}
 
         <input type='submit' className='btn btn-primary my-1' />
-        <a className='btn btn-light my-1' href='dashboard.html'>
+        <Link className='btn btn-light my-1' to='/dashboard'>
           Go Back
-        </a>
+        </Link>
       </form>
     </Fragment>
   );

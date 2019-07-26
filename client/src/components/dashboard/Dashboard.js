@@ -10,11 +10,14 @@ const Dashboard = ({
   getcurrentprofile,
   auth: { user },
   profile: { profile, loading }
+  //   profile: { profile }
 }) => {
   useEffect(() => {
+    //alert('Dashboard');
     getcurrentprofile();
   }, []);
   return loading && profile === null ? (
+    //   return profile === null ? (
     <Spinner />
   ) : (
     <Fragment>
