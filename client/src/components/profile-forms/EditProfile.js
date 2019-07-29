@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect, Component } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -62,7 +62,7 @@ const EditProfile = ({
       linkedin: loading || !profile.linkedin ? '' : profile.linkedin,
       instagram: loading || !profile.instagram ? '' : profile.instagram
     });
-  }, [loading]);
+  }, [loading, getcurrentprofile]);
 
   const {
     company,
